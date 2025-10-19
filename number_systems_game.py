@@ -5,7 +5,6 @@ BITS = 16
 SIGNED_MAX = 2 ** (BITS - 1) - 1
 SIGNED_MIN = -(2 ** (BITS - 1))
 
-
 def to_binary(n, bits=BITS):
     if n < 0:
         return "ERROR_NEG"
@@ -178,7 +177,7 @@ def main(page: ft.Page):
             input_field.hint_text = f"Enter a {bits}-bit binary string..."
             quiz_data = {"question": q, "correct_ans": ans, "type": "binary"}
 
-        question_text.value = quiz_data["question"]
+        question_text.value = quiz_data.get("question", "")
         page.update()
 
     def process_submission(e):
