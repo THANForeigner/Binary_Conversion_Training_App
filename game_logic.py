@@ -81,7 +81,7 @@ def to_IEEE_float_point(n: float) -> str:
     return result
 
 def generate_IEEE_question():
-    x = round(random.uniform(0.1, 10.0), 5)
+    x = round(random.uniform(-10.0, 10.0), 5)
     ans = to_IEEE_float_point(x) 
     return f"What is the IEEE binary value of {x}?", ans
 
